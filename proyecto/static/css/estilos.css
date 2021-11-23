@@ -1,0 +1,9 @@
+.centrar-imagen {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.centrar-texto{
+    text-align: center;
+}

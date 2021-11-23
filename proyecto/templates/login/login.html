@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="{% static 'css/OcOrato---Login-form-1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/OcOrato---Login-form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+
+<body>
+    <form method="POST" action="." id="form" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;">
+        <h1 id="head" style="color:rgb(193,166,83);">Iniciar Sesion</h1>
+        <div><img class="img-fluid centrar-imagen" id="image" style="width:auto;height:auto;" src="{% static 'img/hero-logo.png' %}"></div>
+        <div class="form-group mb-3"><input class="form-control" type="text" name="user" id="formum" placeholder="Usuario"></div>
+        <div class="form-group mb-3"><input class="form-control" type="password" name="pass" id="formum2" placeholder="Contraseña"></div>
+        <div class="form-group mb-3"></div><button class="btn btn-light" id="butonas" style="width:100%;height:100%;margin-bottom:10px;background-color:rgb(106,176,209);" type="submit">Iniciar Sesion</button>
+        {% csrf_token %}
+        <a id="linkas" style="font-size:12px;margin:auto;margin-left:0;margin-right:0;margin-bottom:0;margin-top:0;padding-left:0;padding-right:0;color:rgb(177,151,70);" href="#">¿Olvido usuario y contraseña?</a>
+        {% if error1 %}
+        <div class="centrar-texto"><p style="color:rgb(193,166,83);">Usuario y Contraseña incorrectos</p></div>
+        {% endif %}
+        {% if error2 %}
+        <div class="centrar-texto"><p style="color:rgb(193,166,83);">Complete los campos</p></div>
+        {% endif %}
+    </form>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
