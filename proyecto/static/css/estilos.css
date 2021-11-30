@@ -7,3 +7,67 @@
 .centrar-texto{
     text-align: center;
 }
+
+.mt-lg{
+    margin-top: 40px;
+}
+
+.max_vertical{
+    display: flex;
+    align-content: center;
+}
+
+.imagen_perfil{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.mt-xl{
+    margin-top: 80px;
+}
+
+.border{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.ma-lt{
+    margin: 10px 10px;
+}
+
+.size-of-query{
+    max-height: 40px;
+}
+
+.mb-xl{
+    margin-bottom: 80px;
+}
+
+.search-width{
+    width: 80vw;
+}
+
+.mtmb-lg{
+    margin: 50px 0;
+}
+
+.wd-form{
+    width: 70%;
+}
+
+.mb-md{
+    margin-bottom: 15px;
+}
+
+.mt-md{
+    margin-top: 15px;
+}
+
+.resultados{
+    display: none;
+}

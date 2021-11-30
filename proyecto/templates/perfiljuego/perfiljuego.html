@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Juego - Catalogo Fox Games</title>
+{% endblock %}
+
+
+{% block inicio %}
+{% endblock %}
+
+
+{% block usuarios %}
+          <li class="dropdown"><a href="#"><span>{{usuario}}</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/perfil/">Mi perfil</a></li>
+              <li><a href="/perfil/contrasena">Cambiar contraseña</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/cerrar_sesion/">Cerrar Sesion</a></li>
+{% endblock %}
+
+{% block contenido %}
+<div class="row center">
+    <div class="col-lg-6 mt-xl">
+        <img src="{{juego.imagen.url}}" alt=""> <!-- Editar luego -->  
+    </div>
+    <div class="col-lg-6 mt-lg">
+        <p>Nombre del juego: {{juego.nombre}}  </p>
+        <p>Año: {{juego.año}} </p>
+        <p>Genero: {{juego.genero}} </p>
+        <p>Desarrollador: {{juego.developer}} </p>
+        <p>Publicitador: {{juego.publisher}} </p>
+        <p>Descripcion: {{juego.descripcion}} </p>
+    </div>
+</div>
+<p>Comentarios/Reseña:</p>
+<form id="id_usuario" action="" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit">Comentar</button>
+</form>
+{% for comentario in comentarios %}
+<p>{{comentario}}</p>
+{% endfor %}
+{% endblock %}

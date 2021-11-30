@@ -1,6 +1,10 @@
 {% extends 'index.html' %}
 {% load static %}
 
+{% block titulo %}
+<title>Editar perfil - Catalogo Fox Games</title>
+{% endblock %}
+
 {% block inicio %}
 {% endblock %}
 
@@ -8,9 +12,7 @@
           <li class="dropdown"><a href="#"><span>{{usuario}}</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/perfil/">Mi perfil</a></li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="/perfil/contrasena">Cambiar contraseña</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/cerrar_sesion/">Cerrar Sesion</a></li>
@@ -18,33 +20,23 @@
 
 {% block contenido %}
 <div class="row">
-    <div class="col-lg-2">
-    </div>
-    <div class="col-lg-8">
-        <form action="" enctype="multipart/form-data" method="POST" role="form">
+    <div class="col-lg-12 center mtmb-lg">
+        <form class="wd-form" action="" enctype="multipart/form-data" method="POST" role="form">
             {% csrf_token %}
-            <h2>Nombre de Usuario</h2>
+            <h2 class="mb-md">Nombre de Usuario</h2>
             {{form1.username}}
-            <br><br>
-            <h2>Email</h2>
+            <h2 class="mb-md mt-md">Email</h2>
             {{form1.email}}
-            <br><br>
-            <h2>Ciudad</h2>
+            <h2 class="mb-md mt-md">Ciudad</h2>
             {{form2.ciudad}}
-            <br><br>
-            <h2>Pais</h2>
+            <h2 class="mb-md mt-md">Pais</h2>
             {{form2.pais}}
-            <br><br>
-            <h2>Descripcion</h2>
+            <h2 class="mb-md mt-md">Descripcion</h2>
             {{form2.descripcion}}
-            <br><br>
-            <h2>Foto de perfil</h2>
+            <h2 class="mb-md mt-md">Foto de perfil</h2>
             {{form2.imagen}}
-            <br><br><br><br>
             <button class="btn btn-secondary" type="submit">Enviar</button>
         </form>
-    </div>
-    <div class="col-lg-2">
     </div>
 </div>
 {% endblock %}

@@ -7,7 +7,7 @@ from PIL import Image
 # Create your models here.
 class perfil(models.Model):
     n_usuario=models.OneToOneField(User,on_delete=models.CASCADE)
-    imagen=models.ImageField(default = 'logo.png',upload_to='images/', height_field=None, width_field=None, null = True,blank = True)
+    imagen=models.ImageField(default = 'foto-generica.jpg',upload_to='images/', height_field=None, width_field=None, null = True,blank = True)
     ciudad=models.CharField(max_length=255,verbose_name="Ciudad",blank=False,null=True)
     pais=models.CharField(max_length=255,verbose_name="Pais",blank=False,null=True)
     descripcion=models.CharField(max_length=255,verbose_name="Descripcion",blank=False,null=True)
@@ -34,3 +34,4 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.perfil.save()
+

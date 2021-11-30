@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
-from django.contrib import auth
+from django.contrib import auth,messages
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 from perfil.forms import *
 
 @login_required(login_url="/")
@@ -33,4 +35,23 @@ def editar_perfil(request):
     form2 = formPerfil(instance = request.user.perfil)
     context = {"usuario":request.user,"form1":form1,"form2":form2}
     return render(request,'perfil/editar.html',context)
+
+@login_required(login_url="/")
+def password_change(request):
+    if request.method == "POST":
+        form = PasswordChangeForm(request.user,request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request,user)
+            return redirect('/perfil')
+        else:
+            context = {}
+            context['error'] = 'Ha ocurrido un error'
+            return render(request,'perfil/contraseña.html',context)
+    else:
+        form = PasswordChangeForm(request.user)
+        context=dict()
+        context['usuario'] = request.user
+        context['form'] = form
+        return render(request,'perfil/contraseña.html',context)
     

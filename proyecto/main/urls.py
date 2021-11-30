@@ -6,4 +6,5 @@ urlpatterns = [
     path("main/",main),
     path("descripcion/",descripcion),
     path("cerrar_sesion/",cerrar_sesion),
+    path('buscador/',query),
 ]

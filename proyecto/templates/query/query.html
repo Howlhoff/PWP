@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Buscar - Catalogo Fox Games</title>
+{% endblock %}
+
+{% block inicio %}
+{% endblock %}
+
+{% block usuario %}
+{% endblock %}
+
+{% block contenido %}
+<div class="row">
+    <div class="col-lg-12 mt-xl mb-xl">
+        <div class="input-group center">
+            <div class="form-outline">
+              <input type="search" id="id_buscador" class="form-control search-width" placeholder="Buscar" />
+            </div>
+            <button type="button" onclick="buscarJuego()" class="btn btn-primary size-of-query">
+              <i class="bi-search"></i>
+            </button>
+          </div>
+    </div>
+</div>
+<div id="id_resultado" style="display: none;" class="row ma-lt mb-xl resultados">
+  {% for i in algo %}
+    <div class="col-lg-4 mt-lg">
+      <div class="card">
+        <div class="card-header">
+          <p>{{i.nombre}}</p>
+        </div>
+        <div class="card-body">
+          <p>{{i.descripcion}}</p>
+          <button onclick="window.location.href='/juego'">Ver perfil</button>
+          <a href="/juego?id={{i.id_juego}}">Ver perfil</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+  <script src="{% static 'example.js' %}"></script>
+{% endblock %}

@@ -24,5 +24,6 @@ urlpatterns = [
     path('login/',include('login.urls')),
     path('registro/',include('registro.urls')),
     path('perfil/',include('perfil.urls')),
+    path('juego/',include('juego.urls')),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'perfil',
     'rest_framework',
     'corsheaders',
+    'juego',
 ]
 
 MIDDLEWARE = [
