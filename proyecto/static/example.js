@@ -1,4 +1,4 @@
-var ip="localhost:8001";
+var ip="api5.jdiaz.live";
 var direccion="/";
 
 
