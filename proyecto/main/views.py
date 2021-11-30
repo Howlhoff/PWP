@@ -28,7 +28,7 @@ def cerrar_sesion(request):
     return redirect("/")
     
 def query(request):
-    url = requests.get("http://localhost:8001/")
+    url = requests.get("http://api5.jdiaz.live/")
     if url:
         text =  url.text
         data = json.loads(text)
